@@ -1,0 +1,11 @@
+<!-- Zianide Digital — Logo pour fond sombre (Z gris clair/blanc cassé) -->
+<!-- Remplacer ce placeholder par le vrai SVG du monogramme Z + coins d'équerre -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" fill="none">
+  <!-- Corner brackets (cadre viseur) -->
+  <polyline points="5,30 5,5 30,5" stroke="#F4F3F3" stroke-width="3" stroke-linecap="square"/>
+  <polyline points="70,5 95,5 95,30" stroke="#F4F3F3" stroke-width="3" stroke-linecap="square"/>
+  <polyline points="5,70 5,95 30,95" stroke="#F4F3F3" stroke-width="3" stroke-linecap="square"/>
+  <polyline points="70,95 95,95 95,70" stroke="#F4F3F3" stroke-width="3" stroke-linecap="square"/>
+  <!-- Z monogram -->
+  <text x="50" y="65" text-anchor="middle" font-family="Poppins, sans-serif" font-weight="700" font-size="52" fill="#F4F3F3">Z</text>
+</svg>

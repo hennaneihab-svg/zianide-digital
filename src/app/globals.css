@@ -1,0 +1,131 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ─── Zianide Digital — Global Styles ──────────────────────────────────────── */
+
+/* Base interactive cursor (UI/UX Pro Max checklist) */
+button, a, [role="button"], select { cursor: pointer; }
+
+
+:root {
+  --color-primary: #202020;
+  --color-secondary: #8A8A8A;
+  --color-accent: #B4B4B4;
+  --color-border: #EAE8E8;
+  --color-bg: #F4F3F3;
+  --color-bg-dark: #202020;
+  --color-white: #FFFFFF;
+}
+
+/* Reset & base */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  @apply bg-bg text-primary;
+  font-family: var(--font-space-grotesk), 'Space Grotesk', system-ui, sans-serif;
+  font-weight: 400;
+  line-height: 1.7;
+  overflow-x: hidden;
+}
+
+/* Headings use Archivo (heavy agency feel) */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-archivo), 'Archivo', system-ui, sans-serif;
+}
+
+
+/* ─── Typography Scale (Exaggerated Minimalism — UI/UX Pro Max) ─────────────── */
+/* Skill recommends: font-size: clamp(3rem, 10vw, 12rem), font-weight: 900, letter-spacing: -0.05em */
+
+h1, h2, h3, h4 {
+  @apply font-bold leading-tight;
+  letter-spacing: -0.02em;
+}
+
+h1 {
+  font-size: clamp(2.8rem, 7vw, 6rem);
+  font-weight: 900;
+  letter-spacing: -0.04em;
+  line-height: 1.0;
+}
+
+h2 {
+  font-size: clamp(2rem, 4vw, 3.25rem);
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  line-height: 1.1;
+}
+
+h3 {
+  @apply text-xl md:text-2xl;
+  letter-spacing: -0.015em;
+}
+
+h4 {
+  @apply text-lg md:text-xl font-medium;
+}
+
+/* Hero title — bold but balanced */
+.hero-title {
+  font-size: clamp(2.2rem, 5.5vw, 4.5rem);
+  font-weight: 900;
+  letter-spacing: -0.03em;
+  line-height: 1.05;
+}
+
+
+/* ─── Utility classes ──────────────────────────────────────────────────────── */
+
+.section-padding {
+  @apply px-5 md:px-8 lg:px-16 py-20 md:py-28 lg:py-36;
+}
+
+.container-narrow {
+  @apply max-w-6xl mx-auto;
+}
+
+.container-wide {
+  @apply max-w-7xl mx-auto;
+}
+
+/* Section label (small uppercase text above titles) */
+.section-label {
+  @apply text-sm font-medium uppercase tracking-[0.2em] text-secondary mb-4;
+}
+
+/* ─── Selection color ──────────────────────────────────────────────────────── */
+
+::selection {
+  background-color: #202020;
+  color: #FFFFFF;
+}
+
+/* ─── Scrollbar (subtle, on-brand) ─────────────────────────────────────────── */
+
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #F4F3F3;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #B4B4B4;
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #8A8A8A;
+}

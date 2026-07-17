@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+  <rect width="512" height="512" fill="#202020"/>
+  <!-- Z Monogram -->
+  <path d="M120 140 H392 L140 372 H392" stroke="#FFFFFF" stroke-width="48" stroke-linecap="square" stroke-linejoin="miter" fill="none"/>
+  <!-- Accent dot or small square (optional modern touch) -->
+  <rect x="360" y="340" width="32" height="32" fill="#B4B4B4"/>
+</svg>
