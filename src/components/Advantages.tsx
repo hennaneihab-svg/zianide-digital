@@ -1,6 +1,7 @@
 'use client';
 
 import React, { useRef } from 'react';
+import Logo from '@/components/Logo';
 import Image from 'next/image';
 import { motion, useInView } from 'framer-motion';
 import content from '@/content/fr';
@@ -127,13 +128,7 @@ export default function Advantages() {
         {/* Logo watermark — center-right, very subtle */}
         <div className="hidden lg:block absolute top-1/2 -translate-y-1/2 right-16 opacity-[0.025]">
           <div className="relative w-40 h-40">
-            <Image
-              src="/logos/zianide-logo-dark.svg"
-              alt=""
-              fill
-              className="object-contain"
-              aria-hidden="true"
-            />
+            <Logo className="w-full h-full text-black" />
           </div>
         </div>
       </div>

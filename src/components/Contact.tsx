@@ -1,6 +1,7 @@
 'use client';
 
 import React, { useRef, useState } from 'react';
+import Logo from '@/components/Logo';
 import Image from 'next/image';
 import { motion, useInView } from 'framer-motion';
 import { Send, CheckCircle2, AlertCircle, MessageCircle, Instagram, Facebook, MapPin } from 'lucide-react';
@@ -302,12 +303,7 @@ export default function Contact() {
               {/* Logo watermark */}
               <div className="absolute -bottom-8 -right-8 opacity-5 pointer-events-none" aria-hidden="true">
                 <div className="relative w-48 h-48">
-                  <Image
-                    src="/logos/zianide-logo-dark.svg"
-                    alt=""
-                    fill
-                    className="object-contain"
-                  />
+                  <Logo className="w-full h-full text-white" />
                 </div>
               </div>
 

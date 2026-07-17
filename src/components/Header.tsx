@@ -1,7 +1,7 @@
 'use client';
 
 import React, { useState, useEffect, useCallback } from 'react';
-import Image from 'next/image';
+import Logo from '@/components/Logo';
 import Link from 'next/link';
 import { motion, AnimatePresence, useMotionValueEvent, useScroll } from 'framer-motion';
 import content from '@/content/fr';
@@ -163,15 +163,7 @@ export default function Header() {
           <div className="flex items-center justify-between h-16 md:h-20">
             {/* ─── Logo ───────────────────────────────────────────────── */}
             <Link href="/" className="flex items-center gap-3 shrink-0" aria-label="Zianide Digital — Accueil">
-              <div className="relative w-9 h-9 md:w-10 md:h-10">
-                <Image
-                  src="/logos/zianide-logo-fond-clair.svg"
-                  alt="Zianide Digital"
-                  fill
-                  className="object-contain"
-                  priority
-                />
-              </div>
+              <Logo className="w-9 h-9 md:w-10 md:h-10 text-primary" />
               <span className="text-primary font-bold text-base md:text-lg tracking-tight">
                 {nav.logo}
               </span>

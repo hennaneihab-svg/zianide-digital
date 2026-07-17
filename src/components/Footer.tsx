@@ -1,9 +1,9 @@
 'use client';
 
 import React from 'react';
-import Image from 'next/image';
 import Link from 'next/link';
 import { motion } from 'framer-motion';
+import Logo from '@/components/Logo';
 import content from '@/content/fr';
 
 export default function Footer() {
@@ -24,13 +24,9 @@ export default function Footer() {
           
           {/* Logo & Baseline (takes 4 cols on desktop) */}
           <div className="md:col-span-4 lg:col-span-5 flex flex-col gap-6">
-            <Link href="#accueil" className="inline-block relative w-40 h-10">
-              <Image
-                src="/logos/zianide-logo-fond-sombre.svg"
-                alt="Zianide Digital Logo"
-                fill
-                className="object-contain object-left"
-              />
+            <Link href="#accueil" className="inline-flex items-center gap-4 text-white hover:text-white/80 transition-colors" aria-label="Accueil">
+              <Logo className="w-10 h-10" />
+              <span className="font-bold text-2xl tracking-tight">Zianide</span>
             </Link>
             <p className="text-white/70 text-sm leading-relaxed max-w-sm font-medium">
               {footer.baseline}
