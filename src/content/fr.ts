@@ -85,18 +85,19 @@ export interface ProcessContent {
   steps: ProcessStep[];
 }
 
-export interface TeamMember {
-  name: string;
-  role: string;
-  bio: string;
-  initials: string;
+export interface TeamPole {
+  pole: string;         // Ex: '01'
+  title: string;        // Ex: 'Pôle Design & Gestion'
+  tagline: string;      // Courte accroche
+  bio: string;          // Description du pôle
+  skills: string[];     // Badges de compétences
 }
 
 export interface TeamContent {
   sectionLabel: string;
   title: string;
   subtitle: string;
-  members: TeamMember[];
+  members: TeamPole[];
 }
 
 export interface PricingPlan {
@@ -361,21 +362,26 @@ const fr: SiteContent = {
   },
 
   team: {
-    sectionLabel: 'L\u2019équipe',
-    title: 'Deux passionnés, une vision commune',
-    subtitle: 'Zianide Digital, c\u2019est l\u2019alliance d\u2019une double compétence au service de votre projet digital.',
+    sectionLabel: 'Notre équipe',
+    title: 'L’équipe derrière vos projets',
+    subtitle:
+      'Zianide Digital est porté par deux profils complémentaires. Ensemble, nous couvrons l’intégralité du cycle de vie d’un projet digital : de la stratégie visuelle au déploiement technique.',
     members: [
       {
-        name: 'Hennane Ramy Ihab',
-        role: 'Co-fondateur · Dév, Design & Gestion',
-        bio: 'Étudiant en finance à l\u2019École Supérieure d\u2019Économie d\u2019Oran, Ramy allie gestion financière et création digitale. Il conçoit les sites, logos et identités visuelles, tout en gérant la relation client, les devis et le suivi de projet.',
-        initials: 'RH',
+        pole: '01',
+        title: 'Design, Gestion & Relation client',
+        tagline: 'L’identité qui marque, la rigueur qui rassure.',
+        bio:
+          'Ce pôle pilote la dimension créative et organisationnelle de chaque projet : conception de l’interface, identité visuelle, devis, planification et suivi client. Chaque livrable est pensé pour convertir et représenter votre marque avec justesse.',
+        skills: ['Design UI/UX', 'Identité visuelle', 'Gestion de projet', 'Relation client', 'Devis & suivi'],
       },
       {
-        name: 'Iles Reda Younes',
-        role: 'Co-fondateur · Expertise Technique',
-        bio: 'Informaticien passionné, Reda est en charge du développement technique pointu. Architecture logicielle, back-office sur mesure, intégrations complexes et qualité du code : il garantit la robustesse technique de chaque projet.',
-        initials: 'IR',
+        pole: '02',
+        title: 'Développement & Architecture technique',
+        tagline: 'Du code propre, des solutions qui durent.',
+        bio:
+          'Ce pôle assure la solidité technique de chaque réalisation : architecture applicative, développement front-end et back-end, intégrations sur mesure et contrôle qualité. Chaque projet est construit pour être performant, maintenable et scalable.',
+        skills: ['Développement web', 'Architecture logicielle', 'Back-office', 'Intégrations API', 'Qualité du code'],
       },
     ],
   },

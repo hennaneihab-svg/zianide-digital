@@ -3,6 +3,7 @@
 import React, { useRef } from 'react';
 import { motion, useInView } from 'framer-motion';
 import content from '@/content/fr';
+import type { TeamPole } from '@/content/fr';
 
 // ─── Animation Config ────────────────────────────────────────────────────────
 const EASE_PREMIUM = [0.16, 1, 0.3, 1] as const;
@@ -25,21 +26,6 @@ const cardVariants = (index: number) => ({
   },
 });
 
-// ─── Skill Tag Component ─────────────────────────────────────────────────────
-function SkillTag({ label }: { label: string }) {
-  return (
-    <span className="inline-block px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.12em] text-secondary border border-border rounded-full bg-bg">
-      {label}
-    </span>
-  );
-}
-
-// ─── Skills per member ───────────────────────────────────────────────────────
-const memberSkills: Record<string, string[]> = {
-  'Hennane Ramy Ihab': ['Design UI/UX', 'Identité visuelle', 'Gestion de projet', 'Relation client', 'Devis & suivi'],
-  'Iles Reda Younes':  ['Développement web', 'Architecture logicielle', 'Back-office', 'Intégrations API', 'Qualité du code'],
-};
-
 // ─── Team Section ────────────────────────────────────────────────────────────
 export default function Team() {
   const { team } = content;
@@ -56,7 +42,8 @@ export default function Team() {
       <div
         className="absolute inset-0 opacity-[0.04] pointer-events-none"
         style={{
-          backgroundImage: 'linear-gradient(#EAE8E8 1px, transparent 1px), linear-gradient(90deg, #EAE8E8 1px, transparent 1px)',
+          backgroundImage:
+            'linear-gradient(#EAE8E8 1px, transparent 1px), linear-gradient(90deg, #EAE8E8 1px, transparent 1px)',
           backgroundSize: '48px 48px',
         }}
         aria-hidden="true"
@@ -82,9 +69,9 @@ export default function Team() {
           </motion.p>
         </motion.div>
 
-        {/* ─── Team Cards Grid ─────────────────────────────────────── */}
+        {/* ─── Pole Cards Grid ─────────────────────────────────────── */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
-          {team.members.map((member, i) => (
+          {(team.members as TeamPole[]).map((pole, i) => (
             <motion.div
               key={i}
               initial="hidden"
@@ -99,25 +86,27 @@ export default function Team() {
                   className="absolute -bottom-6 -right-4 text-[120px] font-black text-white/[0.03] leading-none select-none pointer-events-none"
                   aria-hidden="true"
                 >
-                  {String(i + 1).padStart(2, '0')}
+                  {pole.pole}
                 </span>
 
-                {/* ─── Top Row: Index + Role ────────────────────── */}
+                {/* ─── Top Row: Index + Pôle badge ─────────────── */}
                 <div className="flex items-start justify-between mb-8">
                   <span className="text-xs font-bold text-white/30 tracking-[0.2em] uppercase">
-                    {String(i + 1).padStart(2, '0')}
+                    {pole.pole}
                   </span>
                   <span className="text-[10px] font-bold uppercase tracking-[0.15em] text-accent bg-accent/10 px-3 py-1.5 rounded-full">
-                    Co-fondateur
+                    Pôle
                   </span>
                 </div>
 
-                {/* ─── Name ────────────────────────────────────── */}
-                <h3 className="text-2xl sm:text-3xl font-black text-white tracking-tight mb-1 leading-tight">
-                  {member.name}
+                {/* ─── Title ───────────────────────────────────── */}
+                <h3 className="text-xl sm:text-2xl font-black text-white tracking-tight mb-2 leading-tight">
+                  {pole.title}
                 </h3>
-                <p className="text-sm font-semibold text-white/40 uppercase tracking-[0.12em] mb-6">
-                  {member.role.split('·')[1]?.trim()}
+
+                {/* ─── Tagline ─────────────────────────────────── */}
+                <p className="text-sm font-semibold italic text-accent/80 mb-5">
+                  {pole.tagline}
                 </p>
 
                 {/* ─── Divider ─────────────────────────────────── */}
@@ -125,12 +114,12 @@ export default function Team() {
 
                 {/* ─── Bio ─────────────────────────────────────── */}
                 <p className="text-sm text-white/60 leading-relaxed mb-8">
-                  {member.bio}
+                  {pole.bio}
                 </p>
 
-                {/* ─── Skills ──────────────────────────────────── */}
+                {/* ─── Skill Tags ──────────────────────────────── */}
                 <div className="flex flex-wrap gap-2">
-                  {(memberSkills[member.name] ?? []).map((skill) => (
+                  {pole.skills.map((skill) => (
                     <span
                       key={skill}
                       className="inline-block px-3 py-1 text-[10px] font-semibold uppercase tracking-[0.1em] text-white/50 border border-white/10 rounded-full hover:border-white/30 hover:text-white/80 transition-colors duration-300"
