@@ -445,7 +445,7 @@ const fr: SiteContent = {
       phone: '+213 55 41 82 982',
       location: 'Basés à Tlemcen & Oran, Algérie — intervention 100% à distance.',
       whatsapp: '+213554182982',
-      instagram: '@zianide.digital', // Placeholder
+      instagram: '@ziande_digitale',
       facebook: 'Zianide Digital', // Placeholder
     },
   },
@@ -477,7 +477,7 @@ const fr: SiteContent = {
         title: 'Contact',
         links: [
           { label: 'WhatsApp', href: 'https://wa.me/213554182982' },
-          { label: 'Instagram', href: 'https://instagram.com/zianide.digital' },
+          { label: 'Instagram', href: 'https://www.instagram.com/ziande_digitale?igsh=MTFjaHJtcnRoMnJq' },
           { label: 'Facebook', href: 'https://facebook.com/zianidedigital' },
           { label: 'contact@zianide.com', href: 'mailto:contact@zianide.com' },
         ],

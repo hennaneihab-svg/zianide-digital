@@ -335,7 +335,7 @@ export default function Contact() {
                 {/* Social Links */}
                 <div className="space-y-4 flex-1">
                   <a
-                    href="https://instagram.com/zianide.digital"
+                    href="https://www.instagram.com/ziande_digitale?igsh=MTFjaHJtcnRoMnJq"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="flex items-center gap-4 text-white/80 hover:text-white transition-colors duration-300 group"
