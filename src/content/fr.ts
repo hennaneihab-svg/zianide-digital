@@ -315,6 +315,14 @@ const fr: SiteContent = {
           'Commerce de tissus (drap Vietnam, skaï, tissus unis) à Tlemcen, avec livraison nationale. Ce site catalogue orienté conversion est conçu entièrement en arabe (RTL), pensé pour une clientèle locale qui achète via les réseaux et la livraison.',
         url: 'https://younes15-reda.github.io/bab-zair-tissu/',
       },
+      {
+        title: 'Milybo DZ',
+        sector: 'E-commerce / Vêtements bébé',
+        badge: 'Bilingue FR/AR',
+        description:
+          'Boutique e-commerce de vêtements pour bébé (0-36 mois) en Algérie. Site bilingue français/arabe (RTL) avec catalogue produits dynamique (Firebase), système de panier, livraison cash à la livraison partout en Algérie et interface orientée conversion.',
+        url: 'https://younes15-reda.github.io/Milybo/',
+      },
     ],
     cta: 'Votre projet pourrait être le prochain.',
     ctaButton: 'Démarrer mon projet',
