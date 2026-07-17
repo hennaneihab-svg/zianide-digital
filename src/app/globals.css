@@ -104,6 +104,12 @@ h4 {
   @apply text-sm font-medium uppercase tracking-[0.2em] text-secondary mb-4;
 }
 
+/* Section label on dark background */
+.section-label-dark {
+  @apply text-sm font-medium uppercase tracking-[0.2em] mb-4;
+  color: rgba(255,255,255,0.35);
+}
+
 /* ─── Selection color ──────────────────────────────────────────────────────── */
 
 ::selection {
