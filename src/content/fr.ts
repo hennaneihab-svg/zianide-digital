@@ -137,7 +137,6 @@ export interface ContactContent {
     location: string;
     whatsapp: string;
     instagram: string;
-    facebook: string;
   };
 }
 
@@ -460,7 +459,6 @@ const fr: SiteContent = {
       location: 'Basés à Tlemcen & Oran, Algérie — intervention 100% à distance.',
       whatsapp: '+213554182982',
       instagram: '@ziande_digitale',
-      facebook: 'Zianide Digital', // Placeholder
     },
   },
 
@@ -492,7 +490,6 @@ const fr: SiteContent = {
         links: [
           { label: 'WhatsApp', href: 'https://wa.me/213554182982' },
           { label: 'Instagram', href: 'https://www.instagram.com/ziande_digitale?igsh=MTFjaHJtcnRoMnJq' },
-          { label: 'Facebook', href: 'https://facebook.com/zianidedigital' },
           { label: 'contact@zianide.com', href: 'mailto:contact@zianide.com' },
         ],
       },

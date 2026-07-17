@@ -4,7 +4,7 @@ import React, { useRef, useState } from 'react';
 import Logo from '@/components/Logo';
 import Image from 'next/image';
 import { motion, useInView } from 'framer-motion';
-import { Send, CheckCircle2, AlertCircle, MessageCircle, Instagram, Facebook, MapPin } from 'lucide-react';
+import { Send, CheckCircle2, AlertCircle, MessageCircle, Instagram, MapPin } from 'lucide-react';
 import content from '@/content/fr';
 import CornerFrame from '@/components/CornerFrame';
 
@@ -344,18 +344,6 @@ export default function Contact() {
                       <Instagram className="w-4 h-4" />
                     </div>
                     <span className="font-medium tracking-wide">{contact.info.instagram}</span>
-                  </a>
-
-                  <a
-                    href="https://facebook.com/zianidedigital"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="flex items-center gap-4 text-white/80 hover:text-white transition-colors duration-300 group"
-                  >
-                    <div className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center border border-white/10 group-hover:border-white/30 transition-colors">
-                      <Facebook className="w-4 h-4" />
-                    </div>
-                    <span className="font-medium tracking-wide">{contact.info.facebook}</span>
                   </a>
                 </div>
 
