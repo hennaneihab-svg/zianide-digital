@@ -55,16 +55,24 @@ export default function Contact() {
     const form = e.currentTarget;
     const data = new FormData(form);
 
-    const payload = {
+    const contactValue = data.get('email_phone') as string;
+
+    const payload: Record<string, string> = {
       // ⚠️ IMPORTANT : Remplace par ta clé Web3Forms (crée un compte sur web3forms.com)
       access_key: '20bc7b20-b9d4-403c-a41a-6601438d09c1',
       name: data.get('name') as string,
-      email: data.get('email_phone') as string,
+      contact_info: contactValue, // Info brute pour le corps de l'email
       service: data.get('service') as string,
       message: data.get('message') as string,
       subject: 'Nouvelle demande depuis Zianide Digital',
       from_name: 'Zianide Digital',
     };
+
+    // N'ajouter le champ 'email' spécifique que si c'est une vraie adresse mail.
+    // Cela évite de créer un header Reply-To invalide avec un numéro de téléphone (ce qui déclenche les filtres Anti-Spam !)
+    if (contactValue.includes('@')) {
+      payload.email = contactValue;
+    }
 
     try {
       const WEB3FORMS_URL = 'https://api.web3forms.com/submit';
