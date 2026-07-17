@@ -57,7 +57,7 @@ export default function Contact() {
 
     const payload = {
       // ⚠️ IMPORTANT : Remplace par ta clé Web3Forms (crée un compte sur web3forms.com)
-      access_key: 'VOTRE_CLE_WEB3FORMS',
+      access_key: '20bc7b20-b9d4-403c-a41a-6601438d09c1',
       name: data.get('name') as string,
       email: data.get('email_phone') as string,
       service: data.get('service') as string,
