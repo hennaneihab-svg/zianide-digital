@@ -59,13 +59,18 @@ export default function Contact() {
       contact: data.get('email_phone') as string,
       service: data.get('service') as string,
       message: data.get('message') as string,
-      honeypot: data.get('_trap') as string, // bot trap field
     };
 
     try {
-      const res = await fetch('/api/contact', {
+      // ⚠️ IMPORTANT : Remplace cette URL par ton URL Formspree (crée un compte gratuit sur formspree.io)
+      const FORMSPREE_URL = 'https://formspree.io/f/VOTRE_ID_FORMSPREE';
+
+      const res = await fetch(FORMSPREE_URL, {
         method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
+        headers: {
+          'Accept': 'application/json',
+          'Content-Type': 'application/json'
+        },
         body: JSON.stringify(payload),
       });
 
@@ -152,19 +157,6 @@ export default function Contact() {
               </motion.div>
             ) : (
               <form onSubmit={handleSubmit} className="space-y-6" noValidate>
-
-                {/* ── Honeypot (invisible bot trap) ── */}
-                <div aria-hidden="true" className="hidden" tabIndex={-1}>
-                  <label htmlFor="_trap">Ne pas remplir ce champ</label>
-                  <input
-                    type="text"
-                    id="_trap"
-                    name="_trap"
-                    autoComplete="off"
-                    tabIndex={-1}
-                  />
-                </div>
-
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   {/* Nom */}
                   <div className="relative">
