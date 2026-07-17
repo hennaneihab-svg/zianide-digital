@@ -56,17 +56,20 @@ export default function Contact() {
     const data = new FormData(form);
 
     const payload = {
+      // ⚠️ IMPORTANT : Remplace par ta clé Web3Forms (crée un compte sur web3forms.com)
+      access_key: 'VOTRE_CLE_WEB3FORMS',
       name: data.get('name') as string,
-      contact: data.get('email_phone') as string,
+      email: data.get('email_phone') as string,
       service: data.get('service') as string,
       message: data.get('message') as string,
+      subject: 'Nouvelle demande depuis Zianide Digital',
+      from_name: 'Zianide Digital',
     };
 
     try {
-      // ⚠️ IMPORTANT : Remplace cette URL par ton URL Formspree (crée un compte gratuit sur formspree.io)
-      const FORMSPREE_URL = 'https://formspree.io/f/VOTRE_ID_FORMSPREE';
+      const WEB3FORMS_URL = 'https://api.web3forms.com/submit';
 
-      const res = await fetch(FORMSPREE_URL, {
+      const res = await fetch(WEB3FORMS_URL, {
         method: 'POST',
         headers: {
           'Accept': 'application/json',
