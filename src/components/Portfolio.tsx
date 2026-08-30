@@ -205,18 +205,31 @@ export default function Portfolio() {
                 </p>
 
                 {/* Link */}
-                <a
-                  href={project.url}
-                  target={project.url.startsWith('http') ? '_blank' : undefined}
-                  rel={project.url.startsWith('http') ? 'noopener noreferrer' : undefined}
-                  className="inline-flex items-center gap-1.5 text-sm font-medium text-accent hover:text-primary transition-colors duration-300 w-fit"
-                >
-                  <span>{project.url.startsWith('http') ? 'Voir le site' : 'Discuter du projet'}</span>
-                  <ArrowRight
-                    className="w-4 h-4 transition-transform duration-300 ease-premium group-hover:translate-x-1"
-                    strokeWidth={1.5}
-                  />
-                </a>
+                {project.url.startsWith('http') ? (
+                  <a
+                    href={project.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-1.5 text-sm font-medium text-accent hover:text-primary transition-colors duration-300 w-fit"
+                  >
+                    <span>Voir le site</span>
+                    <ArrowRight
+                      className="w-4 h-4 transition-transform duration-300 ease-premium group-hover:translate-x-1"
+                      strokeWidth={1.5}
+                    />
+                  </a>
+                ) : (
+                  <Link
+                    href={project.url}
+                    className="inline-flex items-center gap-1.5 text-sm font-bold text-primary hover:text-accent transition-colors duration-300 w-fit"
+                  >
+                    <span>Voir l’étude de cas complète</span>
+                    <ArrowRight
+                      className="w-4 h-4 transition-transform duration-300 ease-premium group-hover:translate-x-1"
+                      strokeWidth={2}
+                    />
+                  </Link>
+                )}
               </div>
             </motion.div>
           ))}

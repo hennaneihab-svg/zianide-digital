@@ -184,12 +184,12 @@ const fr: SiteContent = {
   nav: {
     logo: 'Zianide Digital',
     links: [
-      { label: 'Accueil', href: '#accueil' },
-      { label: 'Services', href: '#services' },
-      { label: 'Portfolio', href: '#portfolio' },
-      { label: 'À propos', href: '#a-propos' },
-      { label: 'Tarifs', href: '#tarifs' },
-      { label: 'Contact', href: '#contact' },
+      { label: 'Accueil', href: '/#accueil' },
+      { label: 'Services', href: '/#services' },
+      { label: 'Portfolio', href: '/#portfolio' },
+      { label: 'À propos', href: '/#equipe' },
+      { label: 'Tarifs', href: '/#tarifs' },
+      { label: 'Contact', href: '/#contact' },
     ],
     cta: 'Devis gratuit',
     mobileMenuTitle: 'Menu',
@@ -305,8 +305,8 @@ const fr: SiteContent = {
         badge: 'Logiciel sur mesure',
         description:
           'ERP de bureau et système de caisse développé sur mesure en Rust et Tauri 2.0 (100\u00A0% autonome hors-ligne). Intègre un moteur algorithmique de déstockage HIFO strict, le calcul automatique du prix de revient au mètre (pertes de métrage et transport inclus), une caisse express avec calcul dynamique du rendu d\u2019espèces en Dinars et une protection de licence matérielle.',
-        url: '#contact',
-        image: '/portfolio/tissupro-showcase.jpg',
+        url: '/portfolio/tissupro',
+        image: '/portfolio/tissupro/tissupro-showcase.jpg',
       },
       {
         title: 'Huilerie Hennane',
@@ -480,26 +480,26 @@ const fr: SiteContent = {
   },
 
   footer: {
-    baseline: 'Studio de création de sites web, d\u2019applications et d\u2019identité visuelle.',
+    baseline: 'Studio de création de sites web, logiciels sur mesure et identité visuelle.',
     sections: [
       {
         title: 'Navigation',
         links: [
-          { label: 'Accueil', href: '#accueil' },
-          { label: 'Services', href: '#services' },
-          { label: 'Portfolio', href: '#portfolio' },
-          { label: 'Tarifs', href: '#tarifs' },
-          { label: 'Contact', href: '#contact' },
+          { label: 'Accueil', href: '/#accueil' },
+          { label: 'Services', href: '/#services' },
+          { label: 'Portfolio', href: '/#portfolio' },
+          { label: 'Tarifs', href: '/#tarifs' },
+          { label: 'Contact', href: '/#contact' },
         ],
       },
       {
         title: 'Services',
         links: [
-          { label: 'Site vitrine', href: '#services' },
-          { label: 'Site e-commerce', href: '#services' },
-          { label: 'Application sur mesure', href: '#services' },
-          { label: 'Identité visuelle', href: '#services' },
-          { label: 'Maintenance', href: '#services' },
+          { label: 'Sites web', href: '/#services' },
+          { label: 'Logiciels sur mesure', href: '/#services' },
+          { label: 'Applications web & mobiles', href: '/#services' },
+          { label: 'Identité visuelle', href: '/#services' },
+          { label: 'Maintenance', href: '/#services' },
         ],
       },
       {
