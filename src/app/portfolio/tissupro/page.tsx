@@ -18,6 +18,7 @@ import {
   ArrowUpRight,
 } from 'lucide-react';
 import CornerFrame from '@/components/CornerFrame';
+import { getAssetPath } from '@/lib/assets';
 
 export const metadata: Metadata = {
   title: 'TissuPro — Étude de Cas Logiciel | Zianide Digital',
@@ -141,9 +142,9 @@ export default function TissuProCaseStudy() {
               </div>
 
               {/* Showcase Image */}
-              <div className="relative aspect-[16/9] w-full bg-primary/20">
+              <div className="relative aspect-[16/9] w-full bg-[#1a1a1a]">
                 <Image
-                  src="/portfolio/tissupro/tissupro-showcase.jpg"
+                  src={getAssetPath('/portfolio/tissupro/tissupro-showcase.jpg')}
                   alt="TissuPro — Présentation Générale de l'Application"
                   fill
                   priority
@@ -260,9 +261,9 @@ export default function TissuProCaseStudy() {
                   offset={-4}
                   className="absolute inset-0 text-[#EAE8E8] group-hover:text-[#B4B4B4] transition-colors duration-300"
                 />
-                <div className="relative rounded-subtle overflow-hidden border border-border bg-primary aspect-[16/10] shadow-[0_10px_30px_rgba(32,32,32,0.06)]">
+                <div className="relative rounded-subtle overflow-hidden border border-border bg-[#1a1a1a] aspect-[16/10] shadow-[0_10px_30px_rgba(32,32,32,0.06)]">
                   <Image
-                    src="/portfolio/tissupro/tissupro-dashboard.jpg"
+                    src={getAssetPath('/portfolio/tissupro/tissupro-dashboard.jpg')}
                     alt="Dashboard Financier & Analytics TissuPro"
                     fill
                     className="object-cover object-top transition-transform duration-500 group-hover:scale-105"
@@ -297,9 +298,9 @@ export default function TissuProCaseStudy() {
                   offset={-4}
                   className="absolute inset-0 text-[#EAE8E8] group-hover:text-[#B4B4B4] transition-colors duration-300"
                 />
-                <div className="relative rounded-subtle overflow-hidden border border-border bg-primary aspect-[16/10] shadow-[0_10px_30px_rgba(32,32,32,0.06)]">
+                <div className="relative rounded-subtle overflow-hidden border border-border bg-[#1a1a1a] aspect-[16/10] shadow-[0_10px_30px_rgba(32,32,32,0.06)]">
                   <Image
-                    src="/portfolio/tissupro/tissupro-caisse.jpg"
+                    src={getAssetPath('/portfolio/tissupro/tissupro-caisse.jpg')}
                     alt="Terminal Point de Vente et Encaissement TissuPro"
                     fill
                     className="object-cover object-top transition-transform duration-500 group-hover:scale-105"

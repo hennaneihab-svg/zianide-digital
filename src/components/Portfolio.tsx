@@ -7,6 +7,7 @@ import { motion, useInView } from 'framer-motion';
 import { ArrowRight, MoreHorizontal } from 'lucide-react';
 import content from '@/content/fr';
 import CornerFrame from '@/components/CornerFrame';
+import { getAssetPath } from '@/lib/assets';
 
 // ─── Animation Config ────────────────────────────────────────────────────────
 
@@ -87,26 +88,26 @@ function BrowserMockup({ url, title }: { url: string; title: string }) {
 
 function DesktopAppMockup({ image, title }: { image: string; title: string }) {
   return (
-    <div className="w-full bg-bg border border-border rounded-t-subtle overflow-hidden flex flex-col h-full">
-      {/* Desktop Window Title Bar */}
-      <div className="h-8 bg-white border-b border-border flex items-center px-3 gap-3 shrink-0">
+    <div className="w-full bg-[#202020] border border-border rounded-t-subtle overflow-hidden flex flex-col h-full shadow-[0_4px_20px_rgba(32,32,32,0.06)]">
+      {/* Desktop Window Title Bar (Anthracite #202020) */}
+      <div className="h-8 bg-[#202020] border-b border-white/10 flex items-center px-3 gap-3 shrink-0">
         {/* Window buttons */}
         <div className="flex gap-1.5">
-          <div className="w-2.5 h-2.5 rounded-full bg-[#E0E0E0]" />
-          <div className="w-2.5 h-2.5 rounded-full bg-[#E0E0E0]" />
-          <div className="w-2.5 h-2.5 rounded-full bg-[#E0E0E0]" />
+          <div className="w-2.5 h-2.5 rounded-full bg-white/20" />
+          <div className="w-2.5 h-2.5 rounded-full bg-white/20" />
+          <div className="w-2.5 h-2.5 rounded-full bg-white/20" />
         </div>
         {/* Title bar label */}
-        <div className="flex-1 bg-bg border border-border rounded text-[10px] text-accent px-2 py-0.5 truncate text-center font-mono select-none">
+        <div className="flex-1 text-white/50 text-[10px] truncate text-center font-mono select-none">
           {title} — Application Desktop
         </div>
         <div className="w-4" />
       </div>
 
       {/* App Image Viewport */}
-      <div className="relative flex-1 bg-white overflow-hidden">
+      <div className="relative flex-1 bg-[#1a1a1a] overflow-hidden">
         <Image
-          src={image}
+          src={getAssetPath(image)}
           alt={`Aperçu de ${title}`}
           fill
           className="object-cover object-top transition-transform duration-500 ease-premium group-hover:scale-105"
