@@ -61,6 +61,7 @@ export interface PortfolioProject {
   badge: string;
   description: string;
   url: string;
+  image?: string;
 }
 
 export interface PortfolioContent {
@@ -214,7 +215,7 @@ const fr: SiteContent = {
     sectionLabel: 'Nos services',
     title: 'Ce que nous faisons',
     subtitle:
-      'Quatre grandes expertises, un seul objectif : donner à votre entreprise la présence digitale qu\u2019elle mérite — du concept à la mise en ligne, puis bien au-delà.',
+      'Cinq grandes expertises, un seul objectif : donner à votre entreprise la présence digitale et les outils technologiques qu\u2019elle mérite — du concept au déploiement, puis bien au-delà.',
     items: [
       {
         icon: 'Globe',
@@ -224,10 +225,17 @@ const fr: SiteContent = {
         link: 'En savoir plus',
       },
       {
-        icon: 'Smartphone',
-        title: 'Applications sur mesure',
+        icon: 'Cpu',
+        title: 'Logiciels & applications sur mesure',
         description:
-          'Applications catalogue, vitrine ou avancées avec comptes utilisateurs, back-office et intégrations métier. Collaboration Android & iOS pour couvrir tous vos utilisateurs.',
+          'Conception de logiciels métiers, outils de gestion et plateformes applicatives adaptés aux processus réels de votre activité (ERP, caisse, automatisation). Développés avec des technologies performantes et sécurisées pour maximiser votre rentabilité opérationnelle.',
+        link: 'En savoir plus',
+      },
+      {
+        icon: 'Smartphone',
+        title: 'Applications web & mobiles',
+        description:
+          'Applications catalogue, vitrine ou avancées avec comptes utilisateurs, back-office et intégrations métier. Solutions réactives et intuitives pour couvrir tous vos utilisateurs.',
         link: 'En savoir plus',
       },
       {
@@ -241,7 +249,7 @@ const fr: SiteContent = {
         icon: 'ShieldCheck',
         title: 'Maintenance & suivi',
         description:
-          'Forfaits mensuels tout compris : mises à jour, sauvegardes automatiques, monitoring sécurité et petites modifications. Votre site reste performant, vous n\u2019avez jamais à y penser.',
+          'Forfaits mensuels tout compris : mises à jour, sauvegardes automatiques, monitoring sécurité et petites modifications. Votre solution reste performante et pérenne dans le temps.',
         link: 'En savoir plus',
       },
     ],
@@ -269,7 +277,7 @@ const fr: SiteContent = {
         number: '03',
         title: 'Une double compétence rare',
         description:
-          'Un fondateur qui allie gestion, finance et développement web. Un autre qui apporte une expertise informatique avancée. Résultat : des devis réalistes, un vrai suivi de projet, et une exécution technique solide — pas juste du code.',
+          'Un pôle qui allie gestion, finance et design de produit. Un autre qui apporte une expertise logicielle et technique avancée. Résultat : des devis réalistes, un vrai suivi de projet, et une exécution solide — pas juste du code.',
       },
       {
         number: '04',
@@ -289,8 +297,17 @@ const fr: SiteContent = {
   portfolio: {
     sectionLabel: 'Portfolio',
     title: 'Nos réalisations',
-    subtitle: 'Chaque projet est une vitrine de notre savoir-faire. Découvrez comment nous avons accompagné nos premiers clients.',
+    subtitle: 'Chaque projet est une vitrine de notre savoir-faire. Découvrez nos réalisations en sites web et solutions logicielles.',
     projects: [
+      {
+        title: 'TissuPro',
+        sector: 'Commerce textile, mercerie & demi-gros',
+        badge: 'Logiciel sur mesure',
+        description:
+          'ERP de bureau et système de caisse développé sur mesure en Rust et Tauri 2.0 (100\u00A0% autonome hors-ligne). Intègre un moteur algorithmique de déstockage HIFO strict, le calcul automatique du prix de revient au mètre (pertes de métrage et transport inclus), une caisse express avec calcul dynamique du rendu d\u2019espèces en Dinars et une protection de licence matérielle.',
+        url: '#contact',
+        image: '/portfolio/tissupro-showcase.jpg',
+      },
       {
         title: 'Huilerie Hennane',
         sector: 'Agroalimentaire / Production artisanale',

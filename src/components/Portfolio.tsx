@@ -2,6 +2,7 @@
 
 import React, { useRef } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { motion, useInView } from 'framer-motion';
 import { ArrowRight, MoreHorizontal } from 'lucide-react';
 import content from '@/content/fr';
@@ -82,6 +83,40 @@ function BrowserMockup({ url, title }: { url: string; title: string }) {
   );
 }
 
+// ─── Desktop App Mockup Component ────────────────────────────────────────────
+
+function DesktopAppMockup({ image, title }: { image: string; title: string }) {
+  return (
+    <div className="w-full bg-bg border border-border rounded-t-subtle overflow-hidden flex flex-col h-full">
+      {/* Desktop Window Title Bar */}
+      <div className="h-8 bg-white border-b border-border flex items-center px-3 gap-3 shrink-0">
+        {/* Window buttons */}
+        <div className="flex gap-1.5">
+          <div className="w-2.5 h-2.5 rounded-full bg-[#E0E0E0]" />
+          <div className="w-2.5 h-2.5 rounded-full bg-[#E0E0E0]" />
+          <div className="w-2.5 h-2.5 rounded-full bg-[#E0E0E0]" />
+        </div>
+        {/* Title bar label */}
+        <div className="flex-1 bg-bg border border-border rounded text-[10px] text-accent px-2 py-0.5 truncate text-center font-mono select-none">
+          {title} — Application Desktop
+        </div>
+        <div className="w-4" />
+      </div>
+
+      {/* App Image Viewport */}
+      <div className="relative flex-1 bg-white overflow-hidden">
+        <Image
+          src={image}
+          alt={`Aperçu de ${title}`}
+          fill
+          className="object-cover object-top transition-transform duration-500 ease-premium group-hover:scale-105"
+          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+        />
+      </div>
+    </div>
+  );
+}
+
 // ─── Portfolio Section ───────────────────────────────────────────────────────
 
 export default function Portfolio() {
@@ -119,7 +154,7 @@ export default function Portfolio() {
 
         {/* ─── Projects Grid (3 columns) ──────────────────────────── */}
         <motion.div
-          className="grid grid-cols-1 lg:grid-cols-3 gap-10 md:gap-8 xl:gap-12"
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 md:gap-8 xl:gap-10"
           variants={gridContainerVariants}
           initial="hidden"
           animate={isInView ? 'visible' : 'hidden'}
@@ -143,7 +178,11 @@ export default function Portfolio() {
 
                 {/* Mockup Container — subtle zoom and shadow on hover */}
                 <div className="relative aspect-[4/3] rounded-subtle overflow-hidden border border-border/50 bg-white transition-all duration-[450ms] ease-premium group-hover:scale-[1.02] group-hover:shadow-[0_16px_40px_rgba(32,32,32,0.08)]">
-                  <BrowserMockup url={project.url} title={project.title} />
+                  {project.image ? (
+                    <DesktopAppMockup image={project.image} title={project.title} />
+                  ) : (
+                    <BrowserMockup url={project.url} title={project.title} />
+                  )}
                 </div>
               </div>
 
@@ -168,11 +207,11 @@ export default function Portfolio() {
                 {/* Link */}
                 <a
                   href={project.url}
-                  target="_blank"
-                  rel="noopener noreferrer"
+                  target={project.url.startsWith('http') ? '_blank' : undefined}
+                  rel={project.url.startsWith('http') ? 'noopener noreferrer' : undefined}
                   className="inline-flex items-center gap-1.5 text-sm font-medium text-accent hover:text-primary transition-colors duration-300 w-fit"
                 >
-                  <span>Voir le site</span>
+                  <span>{project.url.startsWith('http') ? 'Voir le site' : 'Discuter du projet'}</span>
                   <ArrowRight
                     className="w-4 h-4 transition-transform duration-300 ease-premium group-hover:translate-x-1"
                     strokeWidth={1.5}

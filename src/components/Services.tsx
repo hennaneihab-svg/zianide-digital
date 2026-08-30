@@ -7,6 +7,7 @@ import {
   Smartphone,
   PenTool,
   ShieldCheck,
+  Cpu,
   ArrowRight,
   type LucideIcon,
 } from 'lucide-react';
@@ -20,6 +21,7 @@ const iconMap: Record<string, LucideIcon> = {
   Smartphone,
   PenTool,
   ShieldCheck,
+  Cpu,
 };
 
 // ─── Animation Config ────────────────────────────────────────────────────────
@@ -207,9 +209,9 @@ export default function Services() {
           </motion.p>
         </motion.div>
 
-        {/* ─── 2×2 Cards Grid ─────────────────────────────────────── */}
+        {/* ─── Cards Grid ────────────────────────────────────────── */}
         <motion.div
-          className="grid grid-cols-1 sm:grid-cols-2 gap-5 md:gap-7 max-w-4xl mx-auto"
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-7 max-w-6xl mx-auto"
           variants={gridContainerVariants}
           initial="hidden"
           animate={isInView ? 'visible' : 'hidden'}
